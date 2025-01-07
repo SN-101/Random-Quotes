@@ -6,73 +6,72 @@ headers = {
 }
 while True:
     type=input("what type of the quotes you wnat (life, love, funny, positive, friends, popular): ").capitalize()
-    match type:
-        case "Popular":
-            links=requests.get("https://www.goodreads.com/quotes/tag/positive", headers=headers)
-            link=links.text
-            html = bs4.BeautifulSoup(link, "html.parser")
-            quotes=html.findAll("div", attrs={"class": "quoteText"})
-            love=[]
-            for quote in quotes:
-                love.append(quote.text)
-            rand_quote=random.choice(love)
-            print(rand_quote)
-            break
-        case "Friends":
-            links=requests.get("https://www.goodreads.com/quotes/tag/friends", headers=headers)
-            link=links.text
-            html = bs4.BeautifulSoup(link, "html.parser")
-            quotes=html.findAll("div", attrs={"class": "quoteText"})
-            love=[]
-            for quote in quotes:
-                love.append(quote.text)
-            rand_quote=random.choice(love)
-            print(rand_quote)
-            break
-        case "Positive":
-            links=requests.get("https://www.goodreads.com/quotes/tag/positive", headers=headers)
-            link=links.text
-            html = bs4.BeautifulSoup(link, "html.parser")
-            quotes=html.findAll("div", attrs={"class": "quoteText"})
-            love=[]
-            for quote in quotes:
-                love.append(quote.text)
-            rand_quote=random.choice(love)
-            print(rand_quote)
-            break
-        case "Funny":
-            links=requests.get("https://www.goodreads.com/quotes/tag/funny", headers=headers)
-            link=links.text
-            html = bs4.BeautifulSoup(link, "html.parser")
-            quotes=html.findAll("div", attrs={"class": "quoteText"})
-            love=[]
-            for quote in quotes:
-                love.append(quote.text)
-            rand_quote=random.choice(love)
-            print(rand_quote)
-            break
-        case "Love":
-            links=requests.get("https://www.goodreads.com/quotes/tag/love", headers=headers)
-            link=links.text
-            html = bs4.BeautifulSoup(link, "html.parser")
-            quotes=html.findAll("div", attrs={"class": "quoteText"})
-            love=[]
-            for quote in quotes:
-                love.append(quote.text)
-            rand_quote=random.choice(love)
-            print(rand_quote)
-            break
-        case "Life":
-            links=requests.get("https://www.goodreads.com/quotes/tag/life", headers=headers)
-            link=links.text
-            html = bs4.BeautifulSoup(link, "html.parser")
-            quotes=html.findAll("div", attrs={"class": "quoteText"})
-            love=[]
-            for quote in quotes:
-                love.append(quote.text)
-            rand_quote=random.choice(love)
-            print(rand_quote)
-            break
-        case _:
-            print("your choose is not correct\nTRY AGAIN")
+    if  type == "Life" or type == "Love" or type == "Funny" or type == "Popular" or type == "Friends" or type == "Popular":
+        links=requests.get(f"https://www.goodreads.com/quotes/tag/{type}", headers=headers)
+        link=links.text
+        html = bs4.BeautifulSoup(link, "html.parser")
+        quotes=html.findAll("div", attrs={"class": "quoteText"})
+        love=[]
+        for quote in quotes:
+            love.append(quote.text)
+        rand_quote=random.choice(love)
+        print(rand_quote)
+        break
+        # case "Friends":
+        #     links=requests.get("https://www.goodreads.com/quotes/tag/friends", headers=headers)
+        #     link=links.text
+        #     html = bs4.BeautifulSoup(link, "html.parser")
+        #     quotes=html.findAll("div", attrs={"class": "quoteText"})
+        #     love=[]
+        #     for quote in quotes:
+        #         love.append(quote.text)
+        #     rand_quote=random.choice(love)
+        #     print(rand_quote)
+        #     break
+        # case "Positive":
+        #     links=requests.get("https://www.goodreads.com/quotes/tag/positive", headers=headers)
+        #     link=links.text
+        #     html = bs4.BeautifulSoup(link, "html.parser")
+        #     quotes=html.findAll("div", attrs={"class": "quoteText"})
+        #     love=[]
+        #     for quote in quotes:
+        #         love.append(quote.text)
+        #     rand_quote=random.choice(love)
+        #     print(rand_quote)
+        #     break
+        # case "Funny":
+        #     links=requests.get("https://www.goodreads.com/quotes/tag/funny", headers=headers)
+        #     link=links.text
+        #     html = bs4.BeautifulSoup(link, "html.parser")
+        #     quotes=html.findAll("div", attrs={"class": "quoteText"})
+        #     love=[]
+        #     for quote in quotes:
+        #         love.append(quote.text)
+        #     rand_quote=random.choice(love)
+        #     print(rand_quote)
+        #     break
+        # case "Love":
+        #     links=requests.get("https://www.goodreads.com/quotes/tag/love", headers=headers)
+        #     link=links.text
+        #     html = bs4.BeautifulSoup(link, "html.parser")
+        #     quotes=html.findAll("div", attrs={"class": "quoteText"})
+        #     love=[]
+        #     for quote in quotes:
+        #         love.append(quote.text)
+        #     rand_quote=random.choice(love)
+        #     print(rand_quote)
+        #     break
+        # case "Life":
+        #     links=requests.get("https://www.goodreads.com/quotes/tag/life", headers=headers)
+        #     link=links.text
+        #     html = bs4.BeautifulSoup(link, "html.parser")
+        #     quotes=html.findAll("div", attrs={"class": "quoteText"})
+        #     love=[]
+        #     for quote in quotes:
+        #         love.append(quote.text)
+        #     rand_quote=random.choice(love)
+        #     print(rand_quote)
+        #     break
+        # case _:
+        #     print("your choose is not correct\nTRY AGAIN")
 
