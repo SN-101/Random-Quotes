@@ -5,7 +5,7 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
 while True:
-    type=input("what type of the quotes you wnat (life, love, funny, positive, friends, popular, motivational, inspirational): ").capitalize()
+    type=input("what type of the quotes you want (life, love, funny, positive, friends, popular, motivational, inspirational): ").capitalize()
     if  type == "Life" or type == "Love" or type == "Funny" or type == "Friends" or type=="Motivational" or type=="Inspirational":
         n = random.choice(range(1, 100))
         links=requests.get(f"https://www.goodreads.com/quotes/tag/{type}?page={n}", headers=headers)
@@ -44,3 +44,5 @@ while True:
         break
     else:
         print("Your choose is not inccorect, please try again")
+
+input("To close click enter")
